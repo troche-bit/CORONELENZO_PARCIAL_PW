@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasos de la Carrera del Deportista</title>
+    <link rel="stylesheet" href="estilos/estilo_pagina3.css">
+</head>
+<body>
+    <header>
+        <h1>Pasos de la Carrera del Deportista</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="pagina1.html">Biografía</a></li>
+            <li><a href="pagina2.html">Galeria</a></li>
+            <li><a href="pagina3.html">Carrera</a></li>
+            <li><a href="curriculum.pdf" target="_blank">Currículum</a></li>
+        </ul>
+    </nav>
+
+    <section class="carrera">
+        <!-- Sección de Clubes -->
+        <article class="paso">
+            <img src="club.jpg" alt="Imagen del Club">
+            <h2>Club de Inicios</h2>
+            <p>El deportista comenzó su carrera en este prestigioso club, donde desarrolló sus primeras habilidades y ganó sus primeras competencias.</p>
+            <a href="https://example.com/club" class="boton" target="_blank">Leer más</a>
+        </article>
+
+        <!-- Sección de Competencias -->
+        <article class="paso">
+            <img src="competencia.jpg" alt="Imagen de la Competencia">
+            <h2>Competencias Internacionales</h2>
+            <p>Al participar en varias competencias internacionales, el deportista logró reconocimiento global, destacándose en torneos importantes.</p>
+            <a href="https://example.com/competencia" class="boton" target="_blank">Leer más</a>
+        </article>
+
+        <!-- Sección de Logros -->
+        <article class="paso">
+            <img src="logro.jpg" alt="Imagen de Logro">
+            <h2>Logros Profesionales</h2>
+            <p>Con múltiples logros y premios, el deportista alcanzó su máximo potencial, convirtiéndose en una figura clave en su disciplina.</p>
+            <a href="https://example.com/logro" class="boton" target="_blank">Leer más</a>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; Derechos reservado por Enzo Coronel - Ñemby - 2024</p>
+    </footer>
+
+    <!-- Script para animación de desplazamiento suave -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pasos = document.querySelectorAll(".paso");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            pasos.forEach(paso => {
+                observer.observe(paso);
+            });
+        });
+    </script>
+</body>
+</html>
